@@ -7,6 +7,7 @@ const Img = styled.img`
 `
 
 const ImgContainer = styled.div`
+  width: 100%;
   margin: 0 auto;
   max-width: 10em;
 `
