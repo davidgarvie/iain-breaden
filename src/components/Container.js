@@ -1,12 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
 
-const Container = styled.div`
-  background-image: ${props => `url(${props.url});`}
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 200px;
+const Container = styled(BackgroundImage)`
   width: 100%;
   padding: 1em;
   min-height: 100vh;
@@ -15,8 +11,16 @@ const Container = styled.div`
   justify-content: space-between;
 `
 
-export default ({ children, url }) => (
-  <Container url={url}>
-    {children}
-  </Container>
-)
+const Background = ({ children, hero }) => {
+  return (
+    <Container
+      Tag="div"
+      fluid={hero.fluid}
+      backgroundColor="#2bf5c6"
+      >
+      {children}
+    </Container>
+  )
+}
+
+export default Background

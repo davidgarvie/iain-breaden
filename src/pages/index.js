@@ -16,7 +16,7 @@ const Content = styled.p`
 `
 
 const Index = ({ data: { contentfulLandingPage: { hero, logo, content } } }) => (
-  <Layout url={hero.file.url}>
+  <Layout hero={hero}>
     <Logo url={logo.file.url} />
     <Content>{content}</Content>
   </Layout>
@@ -34,8 +34,8 @@ query getLandingPageContent {
       }
     }
     hero {
-      file {
-        url
+      fluid(maxWidth: 700, quality: 100) {
+        ...GatsbyContentfulFluid_withWebp
       }
     }
   }
