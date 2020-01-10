@@ -33,6 +33,10 @@ const StlyedNav = styled(Nav)`
   margin-top: auto;
 `
 
+const Title = styled.h1`
+  margin: 0;
+`
+
 const Page = ({ data }) => {
   const { contentfulPage: { content, image, tile, title }} = data;
   const { contentfulLandingPage: { logo } } = data;
@@ -44,7 +48,7 @@ const Page = ({ data }) => {
       <Main>
         <StyledImage fluid ={image.fluid} />
         <section>
-          <h1>{title}</h1>
+          <Title>{title}</Title>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </section>
       </Main>
