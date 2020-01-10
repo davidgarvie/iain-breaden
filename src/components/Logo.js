@@ -12,8 +12,8 @@ const ImgContainer = styled.div`
   max-width: 10em;
 `
 
-export default ({ url }) => (
-  <ImgContainer>
+export default ({ className, url }) => (
+  <ImgContainer className={className}>
     <Img src={url} />
   </ImgContainer>
 )

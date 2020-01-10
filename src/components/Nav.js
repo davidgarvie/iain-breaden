@@ -23,8 +23,8 @@ const StyledList = styled.ul`
   }
 `
 
-const Nav = () => (
-  <nav>
+const Nav = ({ className }) => (
+  <nav className={className}>
     <MobileMenu />
     <StyledList>
       <li><Link to="/about/">About Me</Link></li>
