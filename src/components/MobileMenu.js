@@ -114,7 +114,7 @@ export default () => {
       </div>
       <div className={`menu ${open ? ' open' : ''}`}>
         <ul>
-          <li><a href="#">About Me</a></li>
+          <li><a href="/about">About Me</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">News</a></li>
           <li><a href="#">Contact</a></li>
