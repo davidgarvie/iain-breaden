@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Logo from '../components/Logo';
+import 'normalize.css/normalize.css'
+import '../assets/main.css'
 
 const Content = styled.p`
   font-size: 1.5rem;
