@@ -3,7 +3,7 @@ import Image from 'gatsby-image'
 import Button from '../../components/Button'
 import Layout from '../../components/Layout/Layout'
 import Title from '../../components/Title/Title'
-import { Aside, Container } from './Service.styles'
+import { Aside, Container, Content } from './Service.styles'
 
 export default ({ data }) => {
   const { contentfulService: {  bannerImage, content, cta, title }} = data;
@@ -18,8 +18,8 @@ export default ({ data }) => {
           <Title>{title}</Title>          
         </Aside>
         <section>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-            <Button {...cta} />
+          <Content dangerouslySetInnerHTML={{ __html: html }} />
+          <Button {...cta} />
         </section>
       </Container>
     </Layout>
