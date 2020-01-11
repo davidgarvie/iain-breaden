@@ -69,3 +69,4 @@ public
 !.env.example
 
 .vscode
+.DS_Store
