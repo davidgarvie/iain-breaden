@@ -26,7 +26,9 @@ const Main = styled.main`
 `
 
 const StyledImage = styled(Image)`
-  margin-right: 1em;
+  @media (min-width: 768px) {
+    margin-right: 1em;
+  }
 `
 
 const StlyedNav = styled(Nav)`
