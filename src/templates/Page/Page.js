@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby';
-import Tile from '../../components/Tile'
 import Content from '../../components/Content/Content'
 import Layout from '../../components/Layout/Layout'
 import Link from '../../components/Link/Link'
+import Tile from '../../components/Tile/Tile'
 import Title from '../../components/Title/Title'
 import { Container, Links, Section, StyledImage } from './Page.styles'
 
