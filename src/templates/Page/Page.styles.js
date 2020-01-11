@@ -26,6 +26,7 @@ export const Section = styled.section`
 @media (min-width: 768px) {
   :first-child {
     display: flex;
+    width: 100%;
 
     > :first-child {
       flex-shrink: 0;
