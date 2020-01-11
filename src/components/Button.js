@@ -4,12 +4,13 @@ import styled from 'styled-components'
 const Button = styled.button`
   background: ${props => props.primary ? "#00fbbd" : "transparent"};
   width: 100%;
-  border: 2px solid #fff;
+  border: ${props => props.primary ? "none" : "3px solid rgba(255, 255, 255)"};
   color: inherit;
-  font-size: 1.8rem;
+  font-size: ${props => props.primary ? "1.7rem" : "1.5rem"};
   font-weight: 600;
-  padding: 0.2em 0.8em;
+  padding: 0.4em 0.8em;
   border-radius: 20px;
+  cursor: pointer;
 `
 
 export default ({ url, displayText, type }) => {

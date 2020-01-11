@@ -1,5 +1,6 @@
 import React from 'react'
 import Tile from '../../components/Tile'
+import Content from '../../components/Content/Content'
 import Layout from '../../components/Layout/Layout'
 import Title from '../../components/Title/Title'
 import { Container, StyledImage } from './Page.styles'
@@ -14,7 +15,7 @@ const Page = ({ data }) => {
         <StyledImage fluid ={image.fluid} />
         <section>
           <Title>{title}</Title>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <Content dangerouslySetInnerHTML={{ __html: html }} />
         </section>
       </Container>
       <Tile {...tile} />

@@ -12,6 +12,8 @@ export const Container = Styled.div`
   }
 `
 
-export const Content = Styled.div`
-  margin-bottom: 2em;
+export const Section = Styled.section`
+  > * + * {
+    margin-top: 1em;
+  }
 `

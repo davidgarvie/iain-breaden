@@ -14,6 +14,6 @@ export const Container = styled.div`
 
 export const StyledImage = styled(Image)`
   @media (min-width: 768px) {
-    margin-right: 1em;
+    margin-right: 3em;
   }
 `

@@ -1,9 +1,10 @@
 import React from 'react'
 import Image from 'gatsby-image'
 import Button from '../../components/Button'
+import Content from '../../components/Content/Content'
 import Layout from '../../components/Layout/Layout'
 import Title from '../../components/Title/Title'
-import { Aside, Container, Content } from './Service.styles'
+import { Aside, Container, Section } from './Service.styles'
 
 export default ({ data }) => {
   const { contentfulService: {  bannerImage, content, cta, title }} = data;
@@ -17,10 +18,10 @@ export default ({ data }) => {
         <Aside>
           <Title>{title}</Title>          
         </Aside>
-        <section>
+        <Section>
           <Content dangerouslySetInnerHTML={{ __html: html }} />
           <Button {...cta} />
-        </section>
+        </Section>
       </Container>
     </Layout>
   )

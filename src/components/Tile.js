@@ -9,20 +9,21 @@ const Tile = styled.section`
   width: 100%;
 `
 
-const Title = styled.h1`
-  font-size: 2.5rem;
+const Title = styled.h2`
+  font-size: 2.4rem;
+  font-weight: 500;
   margin: 0 auto;
 `
 
 const Content = styled.div`
-  max-width: 30em;
+  max-width: 23em;
   margin: 0 auto;
-  font-size: 1.4rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight:300;
 `
 
 const ButtonContainer = styled.div`
-  max-width: 10em;
+  max-width: 15em;
   margin: 0 auto;
 `
 
