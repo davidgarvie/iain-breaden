@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby';
 import Tile from '../../components/Tile'
 import Content from '../../components/Content/Content'
 import Layout from '../../components/Layout/Layout'

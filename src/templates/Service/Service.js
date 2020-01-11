@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby';
 import Image from 'gatsby-image'
 import Button from '../../components/Button'
 import Content from '../../components/Content/Content'
