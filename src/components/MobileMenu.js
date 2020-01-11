@@ -10,7 +10,7 @@ const MobileMenu = styled.div`
 .menu-icon {
   width: 60px;
   height: 45px;
-  position: fixed;
+  position: absolute;
   transform: rotate(0deg);
   transition: .5s ease-in-out;
   cursor: pointer;

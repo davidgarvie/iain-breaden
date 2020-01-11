@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Logo from './Logo'
 
 const Header = styled.header`
-  margin-top: 1em;
+  margin: 0 auto 4em;
 `
 
 const StyledLogo = styled(Logo)`
@@ -12,6 +13,6 @@ const StyledLogo = styled(Logo)`
 `
 export default ({ logo }) => (
   <Header>
-    <StyledLogo url={logo.file.url} />
+    <Link to="/"><StyledLogo url={logo.file.url} /></Link>
   </Header>
 )

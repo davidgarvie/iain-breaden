@@ -8,9 +8,8 @@ const StyledList = styled.ul`
   font-size: 1.2rem;
   justify-content: center;
   list-style: none;
-  margin: 0 auto;
+  margin: 0 auto 2em;
   max-width: 32em;
-  padding: 0;
 
   li {
     padding: 0 1em;
@@ -23,8 +22,12 @@ const StyledList = styled.ul`
   }
 `
 
+const StyledNav = styled.nav`
+  margin-top: auto;
+`
+
 const Nav = ({ className }) => (
-  <nav className={className}>
+  <StyledNav>
     <MobileMenu />
     <StyledList>
       <li><Link to="/about/">About Me</Link></li>
@@ -32,7 +35,7 @@ const Nav = ({ className }) => (
       <li><Link to="/news/">News</Link></li>
       <li><Link to="/contact/">Contact</Link></li>
     </StyledList>
-  </nav>
+  </StyledNav>
 )
 
 export default Nav
