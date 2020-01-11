@@ -1,28 +1,27 @@
 import React from 'react'
+import Styled from 'styled-components';
 import { graphql } from 'gatsby'
-import styled from 'styled-components';
-import Layout from '../components/Layout';
-import Logo from '../components/Logo';
+import Layout from '../components/Layout/Layout';
 
-const Content = styled.p`
-  font-size: 1.5rem;
-  max-width: 32em;
-  margin: 0 auto;
+const Content = Styled.div`
+  font-size: 2rem;
+  font-weight: 600;
   text-align: center;
 
   @media (min-width: 48em) {
-      font-size: 2em;
+    font-size: 3rem;
   }
 `
 
-const Index = ({ data: { contentfulLandingPage: { hero, logo, content } } }) => (
-  <Layout hero={hero}>
-    <Logo url={logo.file.url} />
-    <Content>{content}</Content>
-  </Layout>
-)
+export default ({ data }) => {
+  const { contentfulLandingPage: { hero, logo, content } } = data
+  return (
+    <Layout logo={logo} hero={hero}>
+      <Content large>{content}</Content>
+    </Layout>
+  )
+}
 
-export default Index
 
 export const pageQuery = graphql`
 query getLandingPageContent {
