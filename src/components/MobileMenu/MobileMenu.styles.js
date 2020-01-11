@@ -31,6 +31,10 @@ export const MobileMenu = styled.div`
   transition: .25s ease-in-out;
 }
 
+.menu-icon.open {
+  position: fixed;
+}
+
 .menu-icon.open span {
   background: #eee;
 }
@@ -68,23 +72,23 @@ export const MobileMenu = styled.div`
 }
 
 .menu { 
-  opacity: 0;
   transition: .25s ease-in-out;
-  background: #000;
+  background: rgba(0, 0, 0, 0.9);
   color: #fff;
   position: fixed;
-  height: 100vh;
+  height: 0;
   width: 100vw;
   top: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
   z-index: 1;
 }
 
 .menu.open {
-  opacity: 0.9;
+  height: 100vh;
 }
 
 .menu ul {
