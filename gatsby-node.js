@@ -2,12 +2,19 @@ const path = require('path')
 
 async function createPages({ graphql, actions }) {
   const { createPage } = actions;
+  const pageTemplate = path.resolve(`${__dirname}/src/templates/Page/Page.js`);
+  const serviceTemplate = path.resolve(`${__dirname}/src/templates/Service/Service.js`);
+
   const data = await graphql(
     `
     query getAllPages {
       allContentfulPage {
         nodes {
-          name
+          slug
+        }
+      }
+      allContentfulService {
+        nodes{
           slug
         }
       }
@@ -15,16 +22,27 @@ async function createPages({ graphql, actions }) {
     `
   )
 
-  const pageTemplate = path.resolve(`${__dirname}/src/templates/page.js`);
-  
-  data.data.allContentfulPage.nodes.map(page => {
-    const { slug } = page;
+  const { data: { allContentfulPage: { nodes: pages } }} = data;
+  const { data: { allContentfulService: { nodes: services } }} = data;
 
+  pages.map(page => {
+    const { slug } = page;
     createPage({
       path: `/${slug}/`,
       component: pageTemplate,
       context: {
-        slug: slug
+        slug
+      }
+    })
+  })
+
+  services.map(service => {
+    const { slug } = service;
+    createPage({
+      path: `/services/${slug}/`,
+      component: serviceTemplate,
+      context: {
+        slug
       }
     })
   })
