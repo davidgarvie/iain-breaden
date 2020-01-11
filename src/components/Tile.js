@@ -26,14 +26,14 @@ const ButtonContainer = styled.div`
   margin: 0 auto;
 `
 
-export default ({ callToAction, content, title }) => {
+export default ({ cta, content, title }) => {
   const { childMarkdownRemark: { html } } =  content;
   return (
     <Tile>
       <Title>{title}</Title>
       <Content dangerouslySetInnerHTML={{__html: html }} />
       <ButtonContainer>
-        <Button {...callToAction} />
+        <Button {...cta} />
       </ButtonContainer>
     </Tile>
   )
