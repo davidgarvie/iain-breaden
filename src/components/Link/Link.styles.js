@@ -6,4 +6,5 @@ export const StyledLink = Styled.li`
   font-size: 2rem;
   padding: 3em;
   text-align: center;
+  cursor: pointer;
 `;
