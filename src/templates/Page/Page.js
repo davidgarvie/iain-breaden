@@ -3,23 +3,29 @@ import { graphql } from 'gatsby';
 import Tile from '../../components/Tile'
 import Content from '../../components/Content/Content'
 import Layout from '../../components/Layout/Layout'
+import Link from '../../components/Link/Link'
 import Title from '../../components/Title/Title'
-import { Container, StyledImage } from './Page.styles'
+import { Container, Links, Section, StyledImage } from './Page.styles'
 
 const Page = ({ data }) => {
-  const { contentfulPage: { content, image, tile, title }} = data;
+  const { contentfulPage: { content, image, links, tile, title }} = data;
   const { contentfulLandingPage: { logo } } = data;
   const { childMarkdownRemark: { html } } =  content;
   return (
     <Layout logo={logo}>
       <Container>
-        <StyledImage fluid ={image.fluid} />
-        <section>
+        {image && <StyledImage fluid ={image.fluid} />}
+        <Section>
           <Title>{title}</Title>
           <Content dangerouslySetInnerHTML={{ __html: html }} />
-        </section>
+        </Section>
       </Container>
-      <Tile {...tile} />
+      {tile && <Tile {...tile} />}
+      {links && (
+        <Links>
+          {links.map(Link)}
+        </Links>
+      )}
     </Layout>
   )
 }
@@ -65,6 +71,10 @@ export const pageQuery = graphql`
           url
           type
         }
+      }
+      links {
+        title
+        slug
       }
     }
   }
