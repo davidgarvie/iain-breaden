@@ -27,10 +27,6 @@ export const Section = styled.section`
       flex-shrink: 0;
       margin-right: 2em;
     }
-
-    p:first-child {
-      margin-top: 0;
-    }
   }
 }
 `

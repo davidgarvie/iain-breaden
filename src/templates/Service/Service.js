@@ -14,14 +14,14 @@ export default ({ data }) => {
 
   return (
     <Layout logo={logo}>
-      <Image fluid={bannerImage.image.fluid} />
+      {bannerImage && <Image fluid={bannerImage.image.fluid} />}
       <Container>
         <Aside>
           <Title>{title}</Title>          
         </Aside>
         <Section>
           <Content dangerouslySetInnerHTML={{ __html: html }} />
-          <Button {...cta} />
+          {cta && <Button {...cta} />}
         </Section>
       </Container>
     </Layout>

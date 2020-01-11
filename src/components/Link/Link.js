@@ -4,8 +4,8 @@ import { Link } from 'gatsby'
 
 export default ({ title, slug }) => {
   return (
-    <StyledLink>
-      <Link key={slug} to={`/services/${slug}`}>{title}</Link>
+    <StyledLink key={slug}>
+      <Link to={`/services/${slug}`}>{title}</Link>
     </StyledLink>
   )
 }
