@@ -40,7 +40,6 @@ const Title = styled.h1`
 const Page = ({ data }) => {
   const { contentfulPage: { content, image, tile, title }} = data;
   const { contentfulLandingPage: { logo } } = data;
-
   const { childMarkdownRemark: { html } } =  content;
   return (
     <Container>
@@ -86,14 +85,18 @@ export const pageQuery = graphql`
           html
         }
       }
+      
       tile {
         title
-        url
-        cta
         content {
           childMarkdownRemark {
             html
           }
+        }
+        callToAction {
+          displayText
+          url
+          type
         }
       }
     }
