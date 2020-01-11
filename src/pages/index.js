@@ -16,7 +16,7 @@ const Content = Styled.div`
 export default ({ data }) => {
   const { contentfulLandingPage: { hero, logo, content } } = data
   return (
-    <Layout logo={logo} hero={hero}>
+    <Layout logo={{...logo, size: 'large'}} hero={hero}>
       <Content large>{content}</Content>
     </Layout>
   )

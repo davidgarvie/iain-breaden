@@ -8,13 +8,17 @@ export const Container = styled.div`
 
   > * {
     width: 100%;
-    flex: 1 0 320px;
+
+    @media (min-width: 768px) {
+      width: calc(50% - 2em);
+    }
   }
+
 `
 
 export const StyledImage = styled(Image)`
   @media (min-width: 768px) {
-    margin-right: 3em;
+    margin-right: 4em;
   }
 `
 

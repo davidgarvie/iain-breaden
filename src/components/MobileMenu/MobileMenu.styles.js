@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const MobileMenu = styled.div`
+export const MobileMenu = styled.div`
 
 @media (min-width: 48em) {
   display: none;
@@ -11,10 +10,10 @@ const MobileMenu = styled.div`
   width: 60px;
   height: 45px;
   position: absolute;
-  transform: rotate(0deg);
+  transform: rotate(0deg) scale(0.5);
   transition: .5s ease-in-out;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
   top: 1em;
   right: 1em;
 }
@@ -81,6 +80,7 @@ const MobileMenu = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .menu.open {
@@ -101,25 +101,3 @@ const MobileMenu = styled.div`
 }
   
 `
-
-export default () => {
-  const [open, setOpen] = useState(false)
-  return (    
-    <MobileMenu>
-      <div className={`menu-icon${open ? ' open' : ''}`} onClick={() => setOpen(!open)}>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div className={`menu ${open ? ' open' : ''}`}>
-        <ul>
-          <li><a href="/about">About Me</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>  
-      </div>
-    </MobileMenu>
-  )
-}

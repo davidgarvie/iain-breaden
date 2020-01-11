@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Hero } from './Layout.styles'
-import Header from '../Header'
+import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
 import "circular-std"
 import 'normalize.css/normalize.css'
