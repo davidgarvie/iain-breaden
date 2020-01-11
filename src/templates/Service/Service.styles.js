@@ -5,8 +5,11 @@ export const Aside = Styled.aside`
 `
 
 export const Container = Styled.div`
-  display: flex;
-  padding: 4em;
+
+  @media (min-width: 48em) {
+    display: flex;
+    padding: 4em;
+  }
 `
 
 export const Content = Styled.div`
