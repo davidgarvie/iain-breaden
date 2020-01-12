@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet"
 import { Container, Hero } from './Layout.styles'
 import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
@@ -22,6 +23,11 @@ export default ({ children, hero, logo }) => {
 
   const x = (
     <Container>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Iain Breaden</title>
+          <html lang="en" />
+        </Helmet>
       <Header logo={logo} />
       <main>{children}</main>
       <Nav />
