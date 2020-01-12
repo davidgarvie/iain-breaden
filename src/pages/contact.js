@@ -56,7 +56,7 @@ export default ({ data }) => {
         </Aside>
         <Section>
           <p>Want to talk about a project? Or to grab a coffee & run through some ideas? Get in touch using the form below, send an email or give me a call</p>
-          <form action="/success" data-netlify="true">
+          <form action="/success" method="POST" data-netlify="true">
             <Input type="text" placeholder="Name" id="name"/>
             <Input type="text" placeholder="Email" id="email" />
             <Input type="text" placeholder="Telephone" id="telephone" />
