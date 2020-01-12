@@ -7,8 +7,8 @@ const Nav = () => (
     <StyledList>
       <li><Link to="/about/">About Me</Link></li>
       <li><Link to="/services/">Services</Link></li>
-      {/* <li><Link to="/news/">News</Link></li>
-      <li><Link to="/contact/">Contact</Link></li> */}
+      {/* <li><Link to="/news/">News</Link></li> */}
+      <li><Link to="/contact/">Contact</Link></li>
     </StyledList>
   </StyledNav>
 )
