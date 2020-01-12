@@ -8,11 +8,12 @@ import Title from '../../components/Title/Title'
 import { Container, Links, Section, StyledImage } from './Page.styles'
 
 const Page = ({ data }) => {
-  const { contentfulPage: { content, image, links, tile, title }} = data;
+  const { contentfulPage: { content, description, image, links, tile, title }} = data;
   const { contentfulLandingPage: { logo } } = data;
   const { childMarkdownRemark: { html } } =  content;
+  const metaDescription = description && description.childMarkdownRemark.rawMarkdownBody
   return (
-    <Layout logo={logo}>
+    <Layout logo={logo} description={metaDescription}>
       <Container>
         {image && <StyledImage fluid ={image.fluid} />}
         <Section>
@@ -75,6 +76,11 @@ export const pageQuery = graphql`
       links {
         title
         slug
+      }
+      description {
+        childMarkdownRemark {
+          rawMarkdownBody
+        }
       }
     }
   }

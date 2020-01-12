@@ -8,12 +8,13 @@ import Title from '../../components/Title/Title'
 import { Aside, Container, Section } from './Service.styles'
 
 export default ({ data }) => {
-  const { contentfulService: {  bannerImage, content, cta, title }} = data;
+  const { contentfulService: {  bannerImage, content, cta, description, title }} = data;
   const { contentfulLandingPage: { logo } } = data;
   const { childMarkdownRemark: { html } } =  content;
+  const metaDescription = description && description.childMarkdownRemark.rawMarkdownBody
 
   return (
-    <Layout logo={logo}>
+    <Layout logo={logo} description={metaDescription}>
       {bannerImage && <Image fluid={bannerImage.image.fluid} />}
       <Container>
         <Aside>
@@ -54,6 +55,11 @@ export const pageQuery = graphql`
           fluid(maxWidth: 1180, background: "rgb:000000") {
             ...GatsbyContentfulFluid_tracedSVG
           }
+        }
+      }
+      description {
+        childMarkdownRemark {
+          rawMarkdownBody
         }
       }
     }
