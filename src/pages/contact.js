@@ -58,7 +58,7 @@ export default ({ data }) => {
           <p>Want to talk about a project? Or to grab a coffee & run through some ideas? Get in touch using the form below, send an email or give me a call</p>
           <form name="contact" action="/success" method="POST" data-netlify="true">
             <Input type="text" placeholder="Name" name="name"/>
-            <Input type="text" placeholder="Email" name="email" />
+            <Input type="email" placeholder="Email" name="email" />
             <Input type="text" placeholder="Telephone" name="telephone" />
             <TextArea rows="4" cols="50" placeholder="Enquiry" name="enquiry" />
             <Button primary type="submit">Submit</Button>
