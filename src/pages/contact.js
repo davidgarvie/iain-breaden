@@ -3,7 +3,7 @@ import Styled, { css } from 'styled-components';
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout/Layout';
 import Title from '../components/Title/Title';
-import { Button } from '../components/Button/Button.styles';
+import { StyledButton } from '../components/Button/Button.styles';
 
 export const Aside = Styled.aside`
   min-width: 20em;
@@ -62,7 +62,7 @@ export default ({ data }) => {
             <Input type="email" placeholder="Email" name="email" />
             <Input type="text" placeholder="Telephone" name="telephone" />
             <TextArea rows="4" cols="50" placeholder="Enquiry" name="enquiry" />
-            <Button primary type="submit">Submit</Button>
+            <StyledButton primary type="submit">Submit</StyledButton>
           </form>      
         </Section>
       </Container>

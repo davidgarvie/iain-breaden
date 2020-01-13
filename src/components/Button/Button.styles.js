@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Button = styled.button`
+export const StyledButton = styled.button`
   background: ${props => props.primary ? "#00fbbd" : "transparent"};
   width: 100%;
   border: ${props => props.primary ? "none" : "3px solid rgba(255, 255, 255)"};

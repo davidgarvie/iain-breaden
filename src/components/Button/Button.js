@@ -1,9 +1,19 @@
 import React from 'react'
-import { Button } from './Button.styles'
+import { Link } from 'gatsby'
+import { StyledButton } from './Button.styles'
 
-export default ({ displayText, type }) => {
+const Button = ({ displayText, type }) => {
   const primary = type && type.toLowerCase() === 'primary';
-  return (
-    <Button primary={primary}>{displayText}</Button>
-  )
+  return <StyledButton primary={primary}>{displayText}</StyledButton>
 }
+
+const withLink = (Component) => {
+  return ({ url, ...otherProps }) => {
+    if (url) {
+      return <Link to={url}><Component {...otherProps} /></Link>
+    }
+    return <Component {...otherProps} />
+  }
+}
+
+export default withLink(Button)
