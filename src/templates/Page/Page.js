@@ -8,16 +8,16 @@ import Title from '../../components/Title/Title'
 import { Container, Links, Section, StyledImage } from './Page.styles'
 
 const Page = ({ data }) => {
-  const { contentfulPage: { content, description, image, links, tile, title }} = data;
+  const { contentfulPage: { content, description, image, links, tile, heading, title }} = data;
   const { contentfulLandingPage: { logo } } = data;
   const { childMarkdownRemark: { html } } =  content;
   const metaDescription = description && description.childMarkdownRemark.rawMarkdownBody
   return (
-    <Layout logo={logo} description={metaDescription}>
+    <Layout logo={logo} description={metaDescription} title={title}>
       <Container>
         {image && <StyledImage fluid ={image.fluid} />}
         <Section>
-          <Title>{title}</Title>
+          <Title>{heading}</Title>
           <Content dangerouslySetInnerHTML={{ __html: html }} />
         </Section>
       </Container>
@@ -35,11 +35,6 @@ export default Page
 
 export const pageQuery = graphql`
   query PageBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     contentfulLandingPage {
       logo {
         file {
@@ -48,7 +43,7 @@ export const pageQuery = graphql`
       }
     }
     contentfulPage(slug: { eq: $slug }) {
-      title
+      heading
       image {
         fluid(maxWidth: 1180, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
@@ -74,9 +69,10 @@ export const pageQuery = graphql`
         }
       }
       links {
-        title
+        heading
         slug
       }
+      title
       description {
         childMarkdownRemark {
           rawMarkdownBody

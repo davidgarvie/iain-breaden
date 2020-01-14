@@ -8,17 +8,17 @@ import Title from '../../components/Title/Title'
 import { Aside, Container, Section } from './Service.styles'
 
 export default ({ data }) => {
-  const { contentfulService: {  bannerImage, content, cta, description, title }} = data;
+  const { contentfulService: {  bannerImage, content, cta, description, heading, title }} = data;
   const { contentfulLandingPage: { logo } } = data;
   const { childMarkdownRemark: { html } } =  content;
   const metaDescription = description && description.childMarkdownRemark.rawMarkdownBody
 
   return (
-    <Layout logo={logo} description={metaDescription}>
+    <Layout logo={logo} description={metaDescription} title={title}>
       {bannerImage && <Image fluid={bannerImage.image.fluid} />}
       <Container>
         <Aside>
-          <Title>{title}</Title>          
+          <Title>{heading}</Title>
         </Aside>
         <Section>
           <Content dangerouslySetInnerHTML={{ __html: html }} />
@@ -39,7 +39,7 @@ export const pageQuery = graphql`
       }
     }
     contentfulService(slug: {eq: $slug}) {
-      title
+      heading
       content {
         childMarkdownRemark {
           html
@@ -57,6 +57,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      title
       description {
         childMarkdownRemark {
           rawMarkdownBody

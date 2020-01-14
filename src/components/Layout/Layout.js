@@ -19,13 +19,13 @@ const HeroComponent = ({ children, hero }) => {
   )
 }
 
-export default ({ children, description, hero, logo }) => {
+export default ({ children, description, hero, logo, title }) => {
   const x = (
     <Container>
         <Helmet>
           <meta charSet="utf-8" />
           {description && <meta name="description" content={description} />}
-          <title>Iain Breaden</title>
+          <title>{title || 'Iain Breaden Freelance'}</title>
           <html lang="en" />
         </Helmet>
       <Header logo={logo} />

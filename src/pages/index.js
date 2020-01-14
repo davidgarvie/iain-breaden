@@ -14,10 +14,10 @@ const Content = Styled.div`
 `
 
 export default ({ data }) => {
-  const { contentfulLandingPage: { hero, logo, content, description } } = data
+  const { contentfulLandingPage: { hero, logo, content, description, title } } = data
   const metaDescription = description && description.childMarkdownRemark.rawMarkdownBody
   return (
-    <Layout logo={{...logo, size: 'large'}} hero={hero} description={metaDescription}>
+    <Layout logo={{...logo, size: 'large'}} hero={hero} description={metaDescription} title={title}>
       <Content large>{content}</Content>
     </Layout>
   )
@@ -38,6 +38,7 @@ query getLandingPageContent {
         ...GatsbyContentfulFluid_withWebp
       }
     }
+    title
     description {
       childMarkdownRemark {
         rawMarkdownBody
