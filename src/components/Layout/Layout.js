@@ -25,6 +25,7 @@ export default ({ children, description, hero, logo, title }) => {
         <Helmet>
           <meta charSet="utf-8" />
           {description && <meta name="description" content={description} />}
+          {description && <meta name="google-site-verification" content="Eeck4SP4TsinEQpB5GHU68EnZResS9fTjMHqMU-dYzk" />}
           <title>{title || 'Iain Breaden Freelance'}</title>
           <html lang="en" />
         </Helmet>
