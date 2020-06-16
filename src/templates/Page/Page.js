@@ -71,6 +71,9 @@ export const pageQuery = graphql`
       links {
         heading
         slug
+        linkColor {
+          hexCode
+        }
       }
       title
       description {

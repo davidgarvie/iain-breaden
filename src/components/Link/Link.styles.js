@@ -6,7 +6,6 @@ export const ListItem = Styled.li`
 `
 
 export const StyledLink = Styled(Link)`
-  background: #00fbbd;
   font-size: 2rem;
   text-align: center;
   cursor: pointer;
@@ -16,4 +15,5 @@ export const StyledLink = Styled(Link)`
   justify-content: center;
   width: 100%;
   word-break: break-all;
+  ${props => `background: ${props.color};`}
 `;
