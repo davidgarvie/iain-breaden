@@ -2,10 +2,17 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
 import moment from 'moment'
+import Styled from 'styled-components';
 import Layout from '../components/Layout/Layout'
 import Title from '../components/Title/Title';
-import { Grid } from './Posts.style.js'
 
+const Grid = Styled.ul`
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 1em;
+`
 
 export default ({ data }) => {
   const { allContentfulPost: { nodes: posts } } = data
