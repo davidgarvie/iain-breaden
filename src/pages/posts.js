@@ -22,6 +22,15 @@ export default ({ data }) => {
   const { allContentfulPost: { nodes: posts } } = data
   const { contentfulLandingPage: { logo } } = data;
 
+  if (!posts || posts.length === 0) {
+    return (
+      <Layout logo={logo}>
+        <Title>Oops</Title>
+        <p>There are no posts right now. Make sure to check back soon.</p>
+      </Layout>
+      )
+  }
+
   return (
     <Layout logo={logo} >
       <Title>Posts</Title>
