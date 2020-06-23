@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby';
-import moment from 'moment';
+import { formatDistanceToNow } from 'date-fns'
 import Layout from '../../components/Layout/Layout'
 import Title from '../../components/Title/Title'
 import {Container, Content, StyledImage, SubHeading} from './Post.styles';
@@ -13,7 +13,7 @@ export default ({ data }) => {
     <Layout logo={logo} >
       <Container>
         <Title>{title}</Title>
-        <SubHeading>Posted {moment(date).fromNow()}. About a {timeToRead} minute read.</SubHeading>
+        <SubHeading>Posted {formatDistanceToNow(new Date(date), { addSuffix: true })}. About a {timeToRead} minute read.</SubHeading>
         <StyledImage fluid={image.fluid} />
         <Content 
           dangerouslySetInnerHTML={{ __html: html }}

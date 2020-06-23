@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
-import moment from 'moment'
+import { formatDistanceToNow } from 'date-fns'
 import Styled from 'styled-components';
 import Layout from '../components/Layout/Layout'
 import Title from '../components/Title/Title';
@@ -31,6 +31,8 @@ export default ({ data }) => {
       )
   }
 
+  
+
   return (
     <Layout logo={logo} >
       <Title>Posts</Title>
@@ -39,7 +41,7 @@ export default ({ data }) => {
           <li key={post.slug}>
             <Link to={post.slug}>
               <h2>{post.title}</h2>
-              <h3>Posted {moment(post.date).fromNow()}</h3>
+              <h3>Posted {formatDistanceToNow(new Date(post.date), { addSuffix: true })}</h3>
               <Image fluid={post.image.fluid} />
             </Link>
           </li>
