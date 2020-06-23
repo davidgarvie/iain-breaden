@@ -1,10 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby';
-import Image from 'gatsby-image';
 import moment from 'moment';
 import Layout from '../../components/Layout/Layout'
 import Title from '../../components/Title/Title'
-import {StyledImage, SubHeading} from './Post.styles';
+import {Container, Content, StyledImage, SubHeading} from './Post.styles';
 
 export default ({ data }) => {
   const { contentfulPost: {  content, date, image, title }} = data;
@@ -12,14 +11,14 @@ export default ({ data }) => {
   const { childMarkdownRemark: { html, timeToRead } } =  content;
   return (
     <Layout logo={logo} >
-      <div>
+      <Container>
         <Title>{title}</Title>
         <SubHeading>Posted {moment(date).fromNow()}. About a {timeToRead} minute read.</SubHeading>
         <StyledImage fluid={image.fluid} />
-        <div 
+        <Content 
           dangerouslySetInnerHTML={{ __html: html }}
         />
-      </div>
+      </Container>
     </Layout>
   )
 }
