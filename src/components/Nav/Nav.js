@@ -7,7 +7,7 @@ const Nav = () => (
     <StyledList>
       <li><Link to="/about/">About Me</Link></li>
       <li><Link to="/services/">Services</Link></li>
-      {/* <li><Link to="/posts/">Posts</Link></li> */}
+      <li><Link to="/posts/">Posts</Link></li>
       <li><Link to="/contact/">Contact</Link></li>
     </StyledList>
   </StyledNav>
